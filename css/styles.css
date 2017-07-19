@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Circular Std Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Circular Std Black"), url("../fonts/CircularStd-Black.woff") format("woff"); }
+* {
+  box-sizing: border-box; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .container header {
+    display: flex;
+    width: 100%;
+    background-color: #000;
+    color: white; }
+    .container header div.logo {
+      width: 12%;
+      background-image: url(../img/logo-spotify.png);
+      /* background-size: contain; */
+      background-size: 32px;
+      background-repeat: no-repeat;
+      background-position: 9px 10px; }
+    .container header div.title {
+      width: 88%;
+      padding: 1rem; }
+      .container header div.title a {
+        margin-left: -15px;
+        color: white;
+        font-family: 'Circular Std Black';
+        text-decoration: none; }
+
+section.search {
+  display: flex; }
+  section.search input {
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: #282828;
+    border-bottom: 1px solid #000; }
+
+section.artists {
+  display: none; }
+  section.artists .content-artist {
+    background-color: black;
+    border-bottom: 1px solid red;
+    display: flex;
+    align-items: center; }
+    section.artists .content-artist .profile-img {
+      width: 20%;
+      padding: 0.5rem;
+      text-align: center; }
+      section.artists .content-artist .profile-img img {
+        width: 55%;
+        border-radius: 50%; }
+    section.artists .content-artist .name {
+      width: 80%; }
+      section.artists .content-artist .name a {
+        text-decoration: none;
+        color: white;
+        background-color: transparent; }
+
+section.albums {
+  display: flex;
+  flex-direction: column; }
+  section.albums .pair-album {
+    display: flex;
+    flex-wrap: wrap; }
+    section.albums .pair-album .album {
+      text-align: center;
+      margin: 1rem;
+      padding: 0 1rem;
+      max-width: 40%;
+      box-sizing: border-box;
+      color: white; }
+      section.albums .pair-album .album img {
+        width: 100%;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out; }
+      section.albums .pair-album .album img:hover {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.2); }
+      section.albums .pair-album .album h4 {
+        margin-top: 5px;
+        font-size: 12px; }
