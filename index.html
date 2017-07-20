@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="spotifyApp">
 
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <h1>{{3+4}}</h1>
   <div class="container">
     <!-- header -->
     <header class="header">
@@ -22,22 +23,46 @@
     </header>
     <!-- /.header -->
     <!-- search input -->
-    <section class="search">
-      <input type="search" placeholder="Search.." id="search-btn">
+    <section class="search" ng-controller="searchArtist">
+      <form>
+        <input type="search" placeholder="Search.." id="search-btn" ng-keypress="detectEnter($event)">
+      </form>
     </section>
     <!-- /.search input-->
-    <section class="artists">
+    <section class="artists" ng-controller="artistList" >
+      <div class="content-artist" ng-repeat="artist in aArtistList">
+        <div class="profile-img">
+          <img src="" alt="Artist">
+        </div>
+        <div class="name">
+          <a href="#" data-artistId="{{artist.id}}" ng-click="getArtistId($event)">{{artist.name}}</a>
+        </div>
+      </div> 
+      <!-- <select ng-change='myChangeFunction()' ng-model="pe">
+        <option ng-repeat="artist in aArtistList" value="{{artist.id}}">
+          {{artist.name}}
+        </option>
+      </select> -->
     </section>
-    <section class="albums">
-      <div class="pair-album">  
+    <section class="albums" ng-controller="albumsList">
+      <div class="pair-album" ng-repeat="album in aArtistAlbums">
+        <div class="album">
+        <a href="#" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album"></a>
+        <h4>{{album.name}}></h4>
+        </div>
       </div>
     </section>
-
-
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
+  <!-- angular CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <!-- Services -->
+  <script src="js/services/spotifyService.js"></script>
+  <!-- Controllers -->
+  <script src="js/controllers/ControllerForm.js"></script>
+  <script src="js/controllers/artistList.js"></script>
+  <script type="text/javascript" src="js/controllers/albumList.js"></script>
 </body>
 
 </html>

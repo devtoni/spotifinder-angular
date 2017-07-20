@@ -1,4 +1,6 @@
-/* global $ */
+angular.module('spotifyApp', [])
+
+/* /* global $
 
 var btnSearch = $('#search-btn')
 var urlAlbums = 'https://api.spotify.com/v1/artists/<%ID_ARTIST%>/albums'
@@ -66,3 +68,4 @@ function fetchDataAlbum (aAlbums) {
   }).join('')
   $('.pair-album').html(contentHTML).fadeIn('slow')
 }
+*/

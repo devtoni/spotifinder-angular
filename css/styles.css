@@ -54,26 +54,24 @@ section.search {
     background-color: #282828;
     border-bottom: 1px solid #000; }
 
-section.artists {
-  display: none; }
-  section.artists .content-artist {
-    background-color: black;
-    border-bottom: 1px solid red;
-    display: flex;
-    align-items: center; }
-    section.artists .content-artist .profile-img {
-      width: 20%;
-      padding: 0.5rem;
-      text-align: center; }
-      section.artists .content-artist .profile-img img {
-        width: 55%;
-        border-radius: 50%; }
-    section.artists .content-artist .name {
-      width: 80%; }
-      section.artists .content-artist .name a {
-        text-decoration: none;
-        color: white;
-        background-color: transparent; }
+section.artists .content-artist {
+  background-color: black;
+  border-bottom: 1px solid red;
+  display: flex;
+  align-items: center; }
+  section.artists .content-artist .profile-img {
+    width: 20%;
+    padding: 0.5rem;
+    text-align: center; }
+    section.artists .content-artist .profile-img img {
+      width: 55%;
+      border-radius: 50%; }
+  section.artists .content-artist .name {
+    width: 80%; }
+    section.artists .content-artist .name a {
+      text-decoration: none;
+      color: white;
+      background-color: transparent; }
 
 section.albums {
   display: flex;
@@ -100,3 +98,5 @@ section.albums {
       section.albums .pair-album .album h4 {
         margin-top: 5px;
         font-size: 12px; }
+
+/*# sourceMappingURL=styles.css.map */
