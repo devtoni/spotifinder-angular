@@ -11,12 +11,18 @@ $input-search-color: #282828;
   box-sizing: border-box;
 }
 
-.container {
+body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
   width: 400px;
   margin: 0 auto;
-  min-height: 100vh;
+  height: 600px;
+  overflow-y: scroll;
   background: #232526;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #414345, #232526);
