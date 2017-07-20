@@ -18,6 +18,10 @@ body {
   height: 100vh;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   width: 400px;
   margin: 0 auto;
@@ -57,18 +61,21 @@ body {
 
 section.search {
   display: flex;
-  input {
-    color: white;
+  form {
     width: 100%;
-    padding: 0.5rem;
-    border: none;
-    background-color: #282828;
-    border-bottom: 1px solid #000;
+    input {
+      color: white;
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      background-color: #282828;
+      border-bottom: 1px solid #000;
+    }
   }
 }
 
 section.artists {
-  
+
   .content-artist {
     background-color: black;
     border-bottom: 1px solid red;
@@ -121,6 +128,27 @@ section.albums {
       h4 {
         margin-top: 5px;
         font-size: 12px;
+      }
+    }
+  }
+}
+
+section.tracks {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    list-style: none;
+    color: white;
+    text-align: center;
+    li {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-size: 0.8rem;
+        text-align: left;
       }
     }
   }

@@ -29,10 +29,10 @@
       </form>
     </section>
     <!-- /.search input-->
-    <section class="artists" ng-controller="artistList" >
+    <section class="artists" ng-controller="artistList">
       <div class="content-artist" ng-repeat="artist in aArtistList">
         <div class="profile-img">
-          <img src="" alt="Artist">
+          <img ng-src="{{ artist.images[0] ? artist.images[0].url : defaultImage}}" alt="Artist">
         </div>
         <div class="name">
           <a href="#" data-artistId="{{artist.id}}" ng-click="getArtistId($event)">{{artist.name}}</a>
@@ -45,13 +45,20 @@
       </select> -->
     </section>
     <section class="albums" ng-controller="albumsList">
-      <div class="pair-album" ng-repeat="album in aArtistAlbums">
-        <div class="album">
-        <a href="#" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album"></a>
-        <h4>{{album.name}}></h4>
+      <div class="pair-album">
+        <div class="album" ng-repeat="album in aArtistAlbums">
+        <a href="#" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album" ng-click="getAlbumId($event)"></a>
+        <h4>{{album.name}}</h4>
         </div>
       </div>
     </section>
+    <section ng-controller="trackList" class="tracks">
+      <ul>
+        <li ng-repeat="track in aTracks"><p>{{track.name}}</p><audio ng-src="{{track.preview_url}}" controls></audio></li>
+      
+      </ul>
+    </section>
+    
   </div>
   <!-- angular CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -63,6 +70,7 @@
   <script src="js/controllers/ControllerForm.js"></script>
   <script src="js/controllers/artistList.js"></script>
   <script type="text/javascript" src="js/controllers/albumList.js"></script>
+  <script type="text/javascript" src="js/controllers/trackList.js"></script>
 </body>
 
 </html>

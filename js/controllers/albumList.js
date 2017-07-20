@@ -4,11 +4,22 @@ angular.module('spotifyApp')
       spotifyService.getAlbumsList(data.artistId)
         .then(function (oAlbums) {
           $scope.aArtistAlbums = oAlbums.data.items
-          console.log($scope.aArtistAlbums)
+          console.log($scope.aArtistAlbums.length)
+          $scope.aArtistAlbums = uniq($scope.aArtistAlbums, 'name')
+          console.log($scope.aArtistAlbums.length)
         })
     })
 
-    /* $scope.getAlbumId = function (e) {
-      var id = e.target.dataset.artistid
-      $rootScope.$broadcast('artistIdReady', { artistId: id }) */
+    function uniq (a, param) {
+      return a.filter(function (item, pos, array) {
+        return array.map(function (mapItem) {
+          return mapItem[param]
+        }).indexOf(item[param]) === pos
+      })
+    }
+
+    $scope.getAlbumId = function (e) {
+      var albumId = e.target.parentNode.attributes[1].nodeValue
+      $rootScope.$broadcast('albumIdReady', { albumId: albumId })
+    }
   })
