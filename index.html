@@ -11,8 +11,9 @@
 </head>
 
 <body>
-  <h1>{{3+4}}</h1>
+ <!--  <h1>{{3+4}}</h1> -->
   <div class="container">
+
     <!-- header -->
     <header class="header">
       <div class="logo">
@@ -22,6 +23,7 @@
       </div>
     </header>
     <!-- /.header -->
+    
     <!-- search input -->
     <section class="search" ng-controller="searchArtist">
       <form>
@@ -29,6 +31,7 @@
       </form>
     </section>
     <!-- /.search input-->
+    <!-- artistList -->
     <section class="artists" ng-controller="artistList">
       <div class="content-artist" ng-repeat="artist in aArtistList">
         <div class="profile-img">
@@ -37,29 +40,40 @@
         <div class="name">
           <a href="#" data-artistId="{{artist.id}}" ng-click="getArtistId($event)">{{artist.name}}</a>
         </div>
-      </div> 
+      </div>
       <!-- <select ng-change='myChangeFunction()' ng-model="pe">
         <option ng-repeat="artist in aArtistList" value="{{artist.id}}">
           {{artist.name}}
         </option>
       </select> -->
     </section>
+    <!-- /.artistList -->
+
+    <!-- album -->
     <section class="albums" ng-controller="albumsList">
       <div class="pair-album">
         <div class="album" ng-repeat="album in aArtistAlbums">
-        <a href="#" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album" ng-click="getAlbumId($event)"></a>
-        <h4>{{album.name}}</h4>
+          <a href="#" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album" ng-click="getAlbumId($event)"></a>
+          <h4>{{album.name}}</h4>
         </div>
       </div>
     </section>
+    <!-- /. album -->
+
+    <!-- tracks -->
     <section ng-controller="trackList" class="tracks">
       <ul>
-        <li ng-repeat="track in aTracks"><p>{{track.name}}</p><audio ng-src="{{track.preview_url}}" controls></audio></li>
-      
+        <li ng-repeat="track in aTracks">
+          <p>{{track.name}}</p>
+          <audio ng-src="{{track.preview_url}}" controls></audio>
+        </li>
       </ul>
     </section>
-    
+    <!-- /. tracks -->
+
   </div>
+
+
   <!-- angular CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <!-- App -->
@@ -67,10 +81,10 @@
   <!-- Services -->
   <script src="js/services/spotifyService.js"></script>
   <!-- Controllers -->
-  <script src="js/controllers/ControllerForm.js"></script>
-  <script src="js/controllers/artistList.js"></script>
-  <script type="text/javascript" src="js/controllers/albumList.js"></script>
-  <script type="text/javascript" src="js/controllers/trackList.js"></script>
+  <script src="js/controllers/formCtrl.js"></script>
+  <script src="js/controllers/artistCtrl.js"></script>
+  <script type="text/javascript" src="js/controllers/albumCtrl.js"></script>
+  <script type="text/javascript" src="js/controllers/trackCtrl.js"></script>
 </body>
 
 </html>
