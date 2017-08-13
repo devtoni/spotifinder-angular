@@ -12,11 +12,6 @@
         template: '<root></root>'
       },
       {
-        name: 'search',
-        url: '/search',
-        template: '<search></search>'
-      },
-      {
         name: 'artist',
         url: '/artist',
         template: '<artist></artist>'

@@ -1,7 +1,7 @@
 /* global angular */
 angular.module('spotifyApp')
   .factory('spotifyService', function ($http) {
-    var token = 'BQCxXzUIOegIU3uRU9zAx59MG7lHrLXReDVzpnr6Me6L11uM-XGe-Gc1h9UcU31afMVCR1G1gvB9Swz7mGfkoqaxc5BMhMp2lAGONJq3cQu-kh_7SJ6vj1S7u48fJKcTFtUNAv4p'
+    var token = 'BQAsrnqw82DnHXlLgNXmvFP4TYk9-WdqldLRabE04clQFej-NNBQwF2SkzSDM7-gmZS6HuEZJFxCLZkuib0RgBmnDkc6FNYumBxl_oGyxeD8Mo-K9CoBY2FFytRqSkxIWz7d4CwI'
     var headerGet = {
       Authorization: 'Bearer ' + token
     }
