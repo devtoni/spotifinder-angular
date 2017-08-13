@@ -1,0 +1,10 @@
+<!-- album -->
+<section class="albums">
+    <div class="pair-album">
+      <div  class="album" ng-repeat="album in vm.aArtistAlbums">
+        <a href="#!/track" data-albumid="{{album.id}}"><img ng-src="{{album.images[1].url}}" alt="Album" ng-click="vm.getAlbumId($event)"></a>
+        <h4>{{album.name}}</h4>
+      </div>
+    </div>
+  </section>
+  <!-- /. album -->

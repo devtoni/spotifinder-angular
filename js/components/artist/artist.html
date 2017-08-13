@@ -1,0 +1,17 @@
+  <!-- artistList -->
+  <section class="artists">
+      <div  class="content-artist" ng-repeat="artist in vm.aArtistList">
+        <div class="profile-img">
+          <img ng-src="{{ artist.images[0] ? artist.images[0].url : defaultImage}}" alt="Artist">
+        </div>
+        <div class="name">
+          <a href="#!/album" data-artistId="{{artist.id}}" ng-click="vm.getArtistId($event)">{{artist.name}}</a>
+        </div>
+      </div>
+      <!-- <select ng-change='myChangeFunction()' ng-model="pe">
+        <option ng-repeat="artist in aArtistList" value="{{artist.id}}">
+          {{artist.name}}
+        </option>
+      </select> -->
+    </section>
+    <!-- /.artistList -->

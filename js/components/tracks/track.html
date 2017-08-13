@@ -1,0 +1,10 @@
+<!-- tracks -->
+<section class="tracks">
+    <ul>
+      <li ng-repeat="track in vm.aTracks">
+        <p>{{track.name}}</p>
+        <audio ng-src="{{track.preview_url}}" controls></audio>
+      </li>
+    </ul>
+  </section>
+  <!-- /. tracks -->
